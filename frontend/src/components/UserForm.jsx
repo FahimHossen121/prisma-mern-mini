@@ -8,7 +8,7 @@ export default function UserForm({ onUserAdded }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/users", { name, email });
+      const res = await axios.post(`${process.env.API_URL}/users`, { name, email });
       onUserAdded(res.data); // notify parent to refresh list
       setName("");
       setEmail("");

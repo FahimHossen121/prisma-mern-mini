@@ -6,7 +6,7 @@ export default function UserList() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/users");
+      const res = await axios.get(`${process.env.API_URL}/users`);
       setUsers(res.data);
     } catch (err) {
       console.error(err);
